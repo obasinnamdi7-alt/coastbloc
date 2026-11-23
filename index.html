@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.className+=" js"</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Coastbloc – Commercial Connections</title>
@@ -75,6 +76,66 @@ h2{font-family:Fraunces,Georgia,serif;font-size:clamp(1.7rem,4vw,2.4rem);margin:
 footer{padding:28px 0;color:var(--muted);font-size:.88rem;text-align:center;background:var(--bg)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 @media (max-width:520px){.panel ul{padding-left:36px}}
+
+/* request form */
+.tabs{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:4px;margin-bottom:24px;background:var(--surface)}
+.tabs button{all:unset;cursor:pointer;padding:10px 20px;border-radius:999px;font-weight:700;font-size:.95rem;color:var(--muted)}
+.tabs button.on{background:var(--hero);color:#fff}
+.tabs button:focus-visible{outline:3px solid var(--gold-soft)}
+.rq{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
+.rq label{display:block;font-size:.88rem;font-weight:500;color:var(--muted)}
+.rq input,.rq select,.rq textarea{width:100%;margin-top:6px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+.rq .full{grid-column:1/-1}
+.rq textarea{min-height:96px;resize:vertical}
+.rq .btn{border:0;cursor:pointer;font-family:inherit;justify-self:start}
+.rqmsg{margin-top:16px;color:var(--muted);min-height:1.5em}
+.rqmsg.err{color:#c0392b}
+.hp{position:absolute;left:-9999px}
+
+/* motion */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.js .rv.in{opacity:1;transform:none}
+.btn{transition:transform .2s,filter .2s}.btn:hover{transform:translateY(-2px)}
+.group{transition:border-color .2s,transform .2s}.group:hover{border-color:var(--gold);transform:translateY(-2px)}
+.what>div{transition:transform .2s}.what>div:hover{transform:translateY(-3px)}
+/* steps */
+.cream{background:#f4efe4;color:#121929}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .cream{background:var(--surface);color:var(--ink)}}
+:root[data-theme="dark"] .cream{background:var(--surface);color:var(--ink)}
+.cream h2{font-size:clamp(2.2rem,6vw,3.6rem)}.cream h2 em{font-style:normal;color:var(--gold)}
+.bar{width:60px;height:5px;border-radius:3px;background:var(--hero);margin:0 0 18px}
+:root[data-theme="dark"] .bar{background:var(--gold)}@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bar{background:var(--gold)}}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;text-align:center}
+.step{position:relative}
+.circ{width:150px;height:150px;border-radius:50%;background:#121929;border:3px solid #d4b572;outline:3px solid #f4efe4;outline-offset:-9px;margin:0 auto 16px;display:grid;place-items:center;position:relative;transition:transform .3s}
+.step:hover .circ{transform:scale(1.06)}
+.num{position:absolute;top:-6px;left:-6px;width:38px;height:38px;border-radius:50%;background:#d4b572;color:#121929;font-weight:700;display:grid;place-items:center}
+.step h3{margin:0 0 4px;letter-spacing:.08em;font-size:1.05rem}.step p{margin:0;color:var(--muted);font-size:.95rem}
+.step:not(:last-child)::after{content:"";position:absolute;top:75px;right:-24px;width:24px;border-top:3px dashed var(--gold)}
+@media (max-width:640px){.steps{grid-template-columns:1fr}.step::after{display:none}}
+/* deals band */
+.deals{background:#d4b572;color:#121929;overflow:hidden}
+.deals .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+.deals h2{font-family:"DM Sans",system-ui,sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(3rem,10vw,6rem);line-height:.95;margin:0 0 18px}
+.deals p{font-weight:700;font-size:1.2rem;margin:0 0 24px}
+.deals .btn{background:#121929;color:#d4b572}
+.deals svg{width:100%;max-width:340px;justify-self:center}
+@media (max-width:760px){.deals .wrap{grid-template-columns:1fr}}
+/* acquisition */
+.acq{background:var(--hero);color:var(--hero-ink)}
+.acq h2{font-size:clamp(2rem,5.5vw,3.4rem)}.acq h2 em{font-style:normal;color:var(--gold-soft)}
+.acq .lead{color:var(--hero-muted)}
+.panel2{background:#151d2f;border:1px solid #27314a;border-radius:20px;padding:24px;margin-bottom:20px}
+.panel2 svg{display:block;width:100%;max-width:520px;margin:0 auto}
+.pills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:28px}
+.pills span{border:1px solid #27314a;border-radius:999px;padding:11px 18px;text-align:center;font-weight:700;font-size:.95rem;color:#a6afc0}
+.pills span.on{background:var(--gold-soft);color:#121929;border-color:var(--gold-soft)}
+/* trust */
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.tcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;transition:transform .2s,border-color .2s}
+.tcard:hover{transform:translateY(-4px);border-color:var(--gold)}
+.tcard b{font-family:Fraunces,Georgia,serif;font-size:1.8rem;color:var(--gold)}
+.tcard h3{margin:8px 0 6px;font-size:1.05rem}.tcard p{margin:0;color:var(--muted);font-size:.95rem}
 </style>
 </head>
 <body>
@@ -90,7 +151,7 @@ footer{padding:28px 0;color:var(--muted);font-size:.88rem;text-align:center;back
     <h1>Connecting Opportunities. Creating Value.</h1>
     <p>We link buyers with the right suppliers, and people with the services they need, so deals get done faster and with less guesswork.</p>
     <div class="btns">
-      <a class="btn gold" href="#contact">Get in touch</a>
+      <a class="btn gold" href="#request">Request a quote</a>
       <a class="btn ghost" href="#services">See what we source</a>
     </div>
   </div>
@@ -110,7 +171,20 @@ footer{padding:28px 0;color:var(--muted);font-size:.88rem;text-align:center;back
   </div>
 </section>
 
-<section id="services" style="padding-top:0">
+<section class="cream" id="how">
+  <div class="wrap">
+    <h2 class="rv">Sourcing<br><em>made simple.</em></h2>
+    <div class="bar"></div>
+    <p class="lead" style="margin-bottom:0">Tell us what you need. We find who can deliver it.</p>
+    <div class="steps">
+      <div class="step rv"><div class="circ"><span class="num">1</span><svg width="84" height="84" viewBox="0 0 84 84"><rect x="20" y="10" width="44" height="64" rx="5" fill="#eef0f7"/><path d="M48 10l16 16H48z" fill="#97a3bd"/><g stroke="#a9b6d0" stroke-width="4" stroke-linecap="round"><path d="M28 36h28M28 46h28M28 56h28"/></g></svg></div><h3>TELL US</h3><p>Share what you need</p></div>
+      <div class="step rv"><div class="circ"><span class="num">2</span><svg width="84" height="84" viewBox="0 0 84 84"><rect x="6" y="6" width="72" height="72" rx="16" fill="#d4b572"/><g transform="translate(42 42) scale(2.3) translate(-12 -12)"><g fill="none" stroke="#121929" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></g></g></svg></div><h3>WE CONNECT</h3><p>We reach the right suppliers</p></div>
+      <div class="step rv"><div class="circ"><span class="num">3</span><svg width="84" height="84" viewBox="0 0 84 84"><rect x="12" y="24" width="60" height="12" rx="3" fill="#ead7a3"/><rect x="14" y="36" width="56" height="34" rx="3" fill="#d4b572"/><rect x="36" y="24" width="12" height="46" fill="#97773f"/></svg></div><h3>YOU RECEIVE</h3><p>Get it delivered</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="padding-top:72px">
   <div class="wrap">
     <h2>Categories we work in</h2>
     <p class="lead">Tap a category to see the products and services we can connect you to.</p>
@@ -119,18 +193,72 @@ footer{padding:28px 0;color:var(--muted);font-size:.88rem;text-align:center;back
   </div>
 </section>
 
+<section class="deals" id="deals">
+  <div class="wrap">
+    <div class="rv"><h2>We close<br>deals.</h2><p>Structured. Negotiated. Done.</p><a class="btn" href="#request">Start a deal</a></div>
+    <div class="rv"><svg viewBox="0 0 300 300" role="img" aria-label="Handshake emblem"><circle cx="150" cy="150" r="148" fill="#121929"/><circle cx="150" cy="150" r="112" fill="none" stroke="#27314a" stroke-width="1.5"/><circle cx="150" cy="150" r="78" fill="none" stroke="#27314a" stroke-width="1.5"/><rect x="85" y="85" width="130" height="130" rx="32" fill="#d4b572"/><g transform="translate(150 150) scale(4.2) translate(-12 -12)"><g fill="none" stroke="#121929" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></g></g></svg></div>
+  </div>
+</section>
+
+<section class="acq" id="clients">
+  <div class="wrap">
+    <h2 class="rv">Your next client<br><em>is out there.</em></h2>
+    <p class="lead rv">We help you reach, attract and win the clients your business needs.</p>
+    <div class="panel2 rv"><svg viewBox="0 0 400 220" role="img" aria-label="Magnet attracting clients"><path d="M160 112V78a40 40 0 0 1 80 0v34h-26V78a14 14 0 0 0-28 0v34z" fill="#d4b572"/><rect x="160" y="98" width="26" height="14" fill="#eef0f7"/><rect x="214" y="98" width="26" height="14" fill="#eef0f7"/><g fill="none" stroke="#d4b572" stroke-width="2.5" stroke-linecap="round"><path d="M186 124q14 10 28 0"/><path d="M174 132q26 18 52 0"/><path d="M162 140q38 26 76 0"/></g><circle cx="40" cy="178" r="9" fill="#97a3bd"/><path d="M26 204a14 14 0 0 1 28 0z" fill="#97a3bd"/><path d="M200 138L40 170" stroke="#97a3bd" stroke-width="1.5" stroke-dasharray="4 4" opacity=".7"/><circle cx="100" cy="178" r="9" fill="#97a3bd"/><path d="M86 204a14 14 0 0 1 28 0z" fill="#97a3bd"/><path d="M200 138L100 170" stroke="#97a3bd" stroke-width="1.5" stroke-dasharray="4 4" opacity=".7"/><circle cx="160" cy="178" r="9" fill="#d4b572"/><path d="M146 204a14 14 0 0 1 28 0z" fill="#d4b572"/><path d="M200 138L160 170" stroke="#d4b572" stroke-width="1.5" stroke-dasharray="4 4" opacity=".7"/><circle cx="240" cy="178" r="9" fill="#d4b572"/><path d="M226 204a14 14 0 0 1 28 0z" fill="#d4b572"/><path d="M200 138L240 170" stroke="#d4b572" stroke-width="1.5" stroke-dasharray="4 4" opacity=".7"/><circle cx="300" cy="178" r="9" fill="#97a3bd"/><path d="M286 204a14 14 0 0 1 28 0z" fill="#97a3bd"/><path d="M200 138L300 170" stroke="#97a3bd" stroke-width="1.5" stroke-dasharray="4 4" opacity=".7"/><circle cx="360" cy="178" r="9" fill="#97a3bd"/><path d="M346 204a14 14 0 0 1 28 0z" fill="#97a3bd"/><path d="M200 138L360 170" stroke="#97a3bd" stroke-width="1.5" stroke-dasharray="4 4" opacity=".7"/><g stroke="#d4b572" stroke-width="2.5" stroke-linecap="round"><path d="M50 40h16M58 32v16M330 90h14M337 83v14"/></g></svg></div>
+    <div class="pills rv"><span>Product / Service Outsourcing</span><span>Business Introductions</span><span>Commercial Deals</span><span class="on">Client Acquisition</span></div>
+    <a class="btn gold" href="#request">Ready for more clients? Let’s talk</a>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <h2 class="rv">Why work with Coastbloc</h2>
+    <p class="lead rv">A commercial deal is only as good as the people on the other side of it. Here’s how we protect yours.</p>
+    <div class="trust">
+      <div class="tcard rv"><b>01</b><h3>One point of contact</h3><p>You deal with Coastbloc from first message to delivery, not a chain of middlemen.</p></div>
+      <div class="tcard rv"><b>02</b><h3>Suppliers we vet</h3><p>We check who we introduce you to before we put our name on the connection.</p></div>
+      <div class="tcard rv"><b>03</b><h3>Clear terms upfront</h3><p>Price, timelines and conditions are agreed before anything moves.</p></div>
+      <div class="tcard rv"><b>04</b><h3>Straight answers</h3><p>We tell you plainly what can be sourced, what can’t, and what it will take.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="request">
+  <div class="wrap">
+    <h2>Tell us what you need</h2>
+    <p class="lead" id="rqLead">Share the details and we’ll come back with matched suppliers and quotes, usually within one business day.</p>
+    <div class="tabs" role="group" aria-label="Request type"><button type="button" class="on" data-mode="buy" aria-pressed="true">I need something</button><button type="button" data-mode="sell" aria-pressed="false">I supply something</button></div>
+    <div class="rq">
+      <label>Your name *<input id="f_name" autocomplete="name"></label>
+      <label>Phone / WhatsApp *<input id="f_phone" type="tel" autocomplete="tel"></label>
+      <label>Email<input id="f_email" type="email" autocomplete="email"></label>
+      <label>Category<select id="f_cat"></select></label>
+      <label class="full"><span id="l_details">What do you need? *</span><textarea id="f_details"></textarea></label>
+      <label><span id="l_qty">Quantity</span><input id="f_qty"></label>
+      <label><span id="l_budget">Budget (₦)</span><input id="f_budget"></label>
+      <label>Location<input id="f_loc" placeholder="e.g. Lagos"></label>
+      <label id="w_deadline"><span>Needed by</span><input id="f_deadline" type="date"></label>
+      <input class="hp" id="f_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="full"><button type="button" class="btn gold" id="f_send">Send request</button></div>
+    </div>
+    <p class="rqmsg" id="rqMsg" role="status"></p>
+  </div>
+</section>
+
 <section id="contact" class="contact">
   <div class="wrap">
     <h2>Let’s talk</h2>
     <p class="lead">Buying, supplying or looking for a service? Send us a message and we’ll take it from there.</p>
     <div class="card">
-      <div><small>Founder &amp; Commercial Intermediary<br>&amp; Acquisitions</small><span style="letter-spacing:.06em;font-weight:700">OBASI NNAMDI</span></div>
+      <div><small>Founder &amp; Commercial Intermediary</small><span>Obasi Nnamdi</span></div>
       <div><small>Phone / WhatsApp</small><a href="tel:+2349061543201">+234 906 154 3201</a></div>
       <div><small>Email</small><a href="mailto:obasinnamdi7@gmail.com">obasinnamdi7@gmail.com</a></div>
+      <div><small>Instagram</small><a href="https://instagram.com/coastbloc" target="_blank" rel="noopener">@coastbloc</a></div>
       <div><small>Location</small><span>Lagos, Nigeria</span></div>
     </div>
     <div class="btns" style="margin-top:32px">
       <a class="btn gold" href="https://wa.me/2349061543201">Message on WhatsApp</a>
+      <a class="btn ghost" href="https://instagram.com/coastbloc" target="_blank" rel="noopener">Follow on Instagram</a>
       <a class="btn ghost" href="mailto:obasinnamdi7@gmail.com">Send an email</a>
     </div>
   </div>
@@ -176,6 +304,43 @@ data.forEach(function(g,n){
   box.appendChild(d);
 });
 document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* ---- request form ---- */
+// Paste your Google Apps Script web-app URL here to save requests to your sheet.
+// Leave empty and the form opens WhatsApp with the request pre-filled.
+var ENDPOINT="https://script.google.com/macros/s/AKfycbz2NIN09CLc4cpEj3JNWVvuJSUel9nkFFMJlD0ux2iMs-cexo_lJhgZTWrHzPap731O/exec";
+var WA="2349061543201",mode="buy";
+var fc=document.getElementById('f_cat');
+fc.innerHTML=data.map(function(g){return '<option>'+g.t+'</option>'}).join('')+'<option>Other</option>';
+var L={buy:{d:'What do you need? *',q:'Quantity',b:'Budget (₦)',lead:'Share the details and we’ll come back with matched suppliers and quotes, usually within one business day.'},
+ sell:{d:'What do you supply? *',q:'Capacity / minimum order',b:'Price range (₦)',lead:'Tell us what you supply and we’ll introduce you to buyers who need it.'}};
+function setMode(m){mode=m;document.querySelectorAll('.tabs button').forEach(function(b){var on=b.dataset.mode===m;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)});
+ l_details.textContent=L[m].d;l_qty.textContent=L[m].q;l_budget.textContent=L[m].b;rqLead.textContent=L[m].lead;w_deadline.style.display=m==='buy'?'':'none'}
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){setMode(b.dataset.mode)})});
+function say(t,err){rqMsg.className='rqmsg'+(err?' err':'');rqMsg.textContent=t}
+f_send.addEventListener('click',function(){
+ if(f_hp.value)return;
+ var p={type:mode==='buy'?'Request':'Supplier',name:f_name.value.trim(),phone:f_phone.value.trim(),email:f_email.value.trim(),category:fc.value,details:f_details.value.trim(),qty:f_qty.value.trim(),budget:f_budget.value.trim(),location:f_loc.value.trim(),deadline:mode==='buy'?f_deadline.value:'',submitted:new Date().toISOString(),source:'coastbloc.top'};
+ if(!p.name||!p.phone||!p.details){say('Please fill in your name, phone and the details.',true);return}
+ var lines=[(mode==='buy'?'New request':'New supplier')+' via Coastbloc site','Name: '+p.name,'Phone: '+p.phone,p.email&&'Email: '+p.email,'Category: '+p.category,'Details: '+p.details,p.qty&&L[mode].q+': '+p.qty,p.budget&&L[mode].b+': '+p.budget,p.location&&'Location: '+p.location,p.deadline&&'Needed by: '+p.deadline].filter(Boolean).join('\n');
+ var url='https://wa.me/'+WA+'?text='+encodeURIComponent(lines);
+ function ok(){say('Thank you, '+p.name+'. We’ve received your details and will be in touch shortly.');
+  [f_details,f_qty,f_budget,f_loc,f_deadline].forEach(function(e){e.value=''})}
+ if(ENDPOINT){f_send.disabled=true;say('Sending…');
+  fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(p)})
+   .then(ok,function(){say('Couldn’t send. Please use WhatsApp instead.',true);window.open(url,'_blank')})
+   .then(function(){f_send.disabled=false})}
+ else{window.open(url,'_blank');say('Opening WhatsApp with your request ready to send. Just tap send.')}
+});
+
+/* ---- scroll reveal ---- */
+(function(){var els=document.querySelectorAll('.rv,.groups .group');
+ els.forEach(function(e){e.classList.add('rv')});
+ if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+ var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+ els.forEach(function(e){io.observe(e)});
+ var wh=document.querySelectorAll('.what>div');wh.forEach(function(e){e.classList.add('rv');io.observe(e)});
+})();
 </script>
 </body>
 </html>
